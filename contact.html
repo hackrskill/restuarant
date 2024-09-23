@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - PLATE</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f2f2f2;
+            font-family: 'Arial', sans-serif;
+            animation: fadeIn 1s ease-in;
+        }
+        .heading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            border-bottom: 4px solid #d54713;
+            margin-bottom: 30px;
+            animation: slideIn 1s ease-out;
+        }
+        .heading h1 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .heading p {
+            font-size: 1.25rem;
+            color: #666;
+            max-width: 800px;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+        .contact {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+        .contact-image {
+            flex: 1;
+            margin-right: 42px;
+            overflow: hidden;
+            animation: zoomIn 1s ease;
+        }
+        .contact-image img {
+            max-width: 50%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .contact-image img:hover {
+            transform: scale(1.05);
+        }
+        .contact-content {
+            flex: 1;
+            margin-top: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+        .contact-content h2 {
+            font-size: 2rem;
+            color: #d54713;
+            margin-bottom: 15px;
+        }
+        .contact-content p {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+         .social-links a {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #ff6347;
+        }
+        
+       
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .text{
+            color: #ff6347;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h1>Contact Us</h1>
+        
+    </div>
+
+    <div class="container">
+        <section class="contact">
+            <div class="contact-image">
+                <img src="contact.png" alt="contact">
+            </div>
+            <div class="contact-content">
+                <h2>Note It Down</h2>
+                
+                <p>Email: platerestro@gmail.com</p>
+                <p>Phone: 1000 3670 86</p>
+                <p>Address: Golf Field, Sec 62, Noida, 201309</p>
+                <h3 class="text">Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" >FACEBOOK</a>
+                    <a href="#" >INSTAGRAM</a>
+                    <a href="#" >TWITTER</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

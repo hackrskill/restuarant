@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - PLATE</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f2f2f2;
+            font-family: 'Arial', sans-serif;
+            animation: fadeIn 1s ease-in;
+        }
+        .heading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            border-bottom: 4px solid #d54713;
+            margin-bottom: 30px;
+            animation: slideIn 1s ease-out;
+        }
+        .heading h1 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .heading p {
+            font-size: 1.25rem;
+            color: #666;
+            max-width: 800px;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+        .about {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+        .about-image {
+            flex: 1;
+            margin-right: 42px;
+            overflow: hidden;
+            animation: zoomIn 1s ease;
+        }
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .about-image img:hover {
+            transform: scale(1.05);
+        }
+        .about-content {
+            flex: 1;
+            margin-top: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+        .about-content h2 {
+            font-size: 2rem;
+            color: #d54713;
+            margin-bottom: 15px;
+        }
+        .about-content p {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .read-more {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #d54713;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .read-more:hover {
+            background-color: #c63c1f;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        footer .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        footer h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ff6347;
+        }
+
+        footer p, footer a {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ff6347;
+        }
+
+        footer .social-links a {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+        }
+        
+        footer .social-links a:hover {
+            color: #ff6347;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h1>About Us</h1>
+        <p>PLATE delivers a gourmet dining experience with savory, delectable, and authentic flavors in an inviting and refined atmosphere.</p>
+    </div>
+
+    <div class="container">
+        <section class="about">
+            <div class="about-image">
+                <img src="hero.png" alt="Delicious Food">
+            </div>
+            <div class="about-content">
+                <h2>In Your Plate</h2>
+                <p>At PLATE, experience delectable dishes like succulent steaks and artisan pastas, complemented by fresh salads and decadent desserts. Enjoy our inviting ambiance, elegant dining spaces, friendly service, and private event facilities.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Our restaurant is a family-owned establishment that has been proudly serving the community since 2020. Located at the corner of Golf Field, Sec 62, Noida (201309).</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: platerestro@gmail.com</p>
+                <p>Phone: 1000 3670 86</p>
+                <p>Address: Golf Field, Sec 62, Noida, 201309</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" >FACEBOOK</a>
+                    <a href="#" >INSTAGRAM</a>
+                    <a href="#" >TWITTER</a>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 PLATE All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

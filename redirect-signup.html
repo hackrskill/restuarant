@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <link rel="stylesheet" href="output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .success-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        .success-message {
+            font-size: 1.5rem;
+            color: #4caf50;
+        }
+
+        
+        .logo-img {
+            width: 50%; /* Adjust width as needed */
+            height: auto; 
+            animation: slideIn 1s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <img src="logo2.png" alt="logo" class="logo-img">
+        <h1 class="success-message font-display">Sign Up Successful!</h1>
+        <p>You will be redirected to the Login page shortly.</p>
+    </div>
+
+    <script>
+        
+        setTimeout(function() {
+            window.location.href = 'login.html'; 
+        }, 3000); //after 3 seconds
+    </script>
+</body>
+</html>

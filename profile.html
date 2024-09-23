@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css">
+    <title>Profile Page</title>
+    <style>
+        
+        .profile-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0; 
+            transform: translateY(20px); 
+            animation: fadeInUp 1s forwards; 
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #333;
+            opacity: 0; 
+            transform: translateY(-10px); 
+            animation: fadeInDown 1s 0.5s forwards;
+        }
+
+        @keyframes fadeInDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info-group {
+            margin-bottom: 20px;
+            opacity: 0; 
+            transform: translateY(10px);
+            animation: fadeInUp 1s 0.5s forwards; 
+        }
+
+        .info-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .info-group p {
+            font-size: 1rem;
+            color: #555;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-group p:hover {
+            transform: scale(1.02); 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .button-container button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff6347;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button-container button:hover {
+            background-color: #181515;
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header font-display">
+            <h1>Profile</h1>
+            <p>View your personal information</p>
+        </div>
+        <div class="info-group">
+            <label for="full-name">Full Name</label>
+            <p id="full-name">Rohit Sukul</p>
+        </div>
+        <div class="info-group">
+            <label for="phone-number">Phone Number</label>
+            <p id="phone-number">+91 8369000011</p>
+        </div>
+        <div class="info-group">
+            <label for="email">Email</label>
+            <p id="email">abc@example.com</p>
+        </div>
+        <div class="info-group">
+            <label for="address">Address</label>
+            <p id="address">Golf Field Sec 62, Noida, 201309</p>
+        </div>
+        <div class="button-container">
+            <a href="home.html">
+                <button type="button">Go Back</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

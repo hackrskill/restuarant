@@ -1,0 +1,64 @@
+/* Category items container */
+.category_items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between items */
+    padding: 20px;
+    justify-content: center; /* Center items horizontally */
+}
+
+/* Flex container for image and text */
+.item-content {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    gap: 20px; /* Space between image and text */
+    padding: 20px; /* Add some padding around the container */
+    background-color: #f9f9f9; /* Slightly different background for better contrast */
+    border-radius: 12px; /* Rounded corners for a polished look */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 300px; /* Fixed width for consistent layout */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Image styling */
+.sale_item {
+    width: 150px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for the image */
+    overflow: hidden; /* Ensure image doesn't overflow its container */
+}
+
+/* Styling for the sale description */
+.sale-description {
+    font-size: 1rem; /* 16px for better readability */
+    font-weight: 400; /* Regular weight for a clean look */
+    color: #333; /* Dark color for readability */
+    line-height: 1.5; /* Improved readability */
+    max-width: 150px; /* Limit width to prevent text from stretching too far */
+    text-align: left; /* Align text to the left */
+}
+
+/* Hover effect for category items */
+.item-content:hover {
+    transform: translateY(-5px); /* Lift item slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+    .item-content {
+        flex-direction: column; /* Stack items vertically on small screens */
+        width: 100%; /* Full width for small screens */
+        text-align: center; /* Center text when stacked */
+    }
+
+    .sale_item {
+        margin-bottom: 15px; /* Space between image and text */
+        width: 120px; /* Adjust image size on smaller screens */
+    }
+
+    .sale-description {
+        font-size: 0.875rem; /* Slightly smaller text on smaller screens */
+        max-width: 100%; /* Allow text to use full width */
+    }
+}

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Landing Page</title>
+    <style>
+        /* Add hover effect */
+        .nav-item:hover {
+            color: #ff6347; 
+            transition: color 0.3s ease; 
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px; /* Adjust width as needed */
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 10px;
+        }
+        
+        /* Dropdown item */
+        .dropdown-item {
+            position: relative;
+            padding: 12px 16px;
+            cursor: pointer;
+        }
+        
+        /* Sub-dropdown container */
+        .sub-dropdown-content {
+            display: none;
+            position: absolute;
+            left: 100%; /* Position sub-dropdown to the right of the parent item */
+            top: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            z-index: 2;
+        }
+        
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #f4cdcd;
+        }
+        
+        /* Show sub-dropdown on hover */
+        .dropdown-item:hover .sub-dropdown-content {
+            display: block;
+        }
+        
+        /* Show main dropdown on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        /* Optional: Add a hover effect to dropdown items */
+        .dropdown-item:hover {
+            background-color: #f0f0f0;
+        }
+        
+
+        /* Hero image animation */
+        .hero-img {
+            width: 50%; /* Adjust width as needed */
+            height: auto; 
+            animation: slideIn 1s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Flex container for text and image */
+        .flex-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .text-content {
+            width: 70%; /* Adjust width as needed */
+        }
+
+        /* Header text styling */
+        .text-content h1 {
+            font-size: 3rem; 
+            font-weight:normal; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
+        }
+
+        /* Paragraph text styling */
+        .text-content p {
+            font-size: 1.25rem;
+            margin-top: 10px; 
+        }
+
+        /* Button styling */
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff6347;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0e0d0d;
+        }
+
+        .category_items {
+            display: flex;
+            flex-wrap: wrap;
+            width: 50%;
+            height: auto;
+            justify-content: space-evenly;
+            animation: fadeInRight 1.5s ease forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Category items container */
+        .category_items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Space between items */
+            padding: 20px;
+            justify-content: center; /* Center items horizontally */
+        }
+
+        /* Flex container for image and text */
+        .item-content {
+            display: flex;
+            align-items: center; /* Vertically align items */
+            gap: 20px; /* Space between image and text */
+            padding: 20px; /* Add some padding around the container */
+            background-color: #f9f9f9; /* Slightly different background for better contrast */
+            border-radius: 12px; /* Rounded corners for a polished look */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            width: 300px; /* Fixed width for consistent layout */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+        }
+
+        /* Image styling */
+        .sale_item {
+            width: 150px; /* Adjust width as needed */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 8px; /* Rounded corners for the image */
+            overflow: hidden; /* Ensure image doesn't overflow its container */
+        }
+
+        /* Styling for the sale description */
+        .sale-description {
+            font-size: 1rem; /* 16px for better readability */
+            font-weight: 400; /* Regular weight for a clean look */
+            color: #333; /* Dark color for readability */
+            line-height: 1.5; /* Improved readability */
+            max-width: 150px; /* Limit width to prevent text from stretching too far */
+            text-align: left; /* Align text to the left */
+        }
+
+        /* Hover effect for category items */
+        .item-content:hover {
+            transform: translateY(-5px); /* Lift item slightly on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+        }
+
+        /* Responsive adjustment for smaller screens */
+        @media (max-width: 768px) {
+            .item-content {
+                flex-direction: column; /* Stack items vertically on small screens */
+                width: 100%; /* Full width for small screens */
+                text-align: center; /* Center text when stacked */
+            }
+
+            .sale_item {
+                margin-bottom: 15px; /* Space between image and text */
+                width: 120px; /* Adjust image size on smaller screens */
+            }
+
+            .sale-description {
+                font-size: 0.875rem; /* Slightly smaller text on smaller screens */
+                max-width: 100%; /* Allow text to use full width */
+            }
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        footer .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        footer h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ff6347;
+        }
+
+        footer p, footer a {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ff6347;
+        }
+
+        footer .social-links a {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 1.25rem;
+        }
+        
+        footer .social-links a:hover {
+            color: #ff6347;
+        }
+
+        /* Profile button styling */
+        .profile-button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-button .material-symbols-outlined {
+            font-size: 2rem;
+            color: #ff6347;
+        }
+
+        .profile-button:hover .material-symbols-outlined {
+            color: #0e0d0d;
+        }
+    </style>
+</head>
+<body>
+    <!-- navigation bar -->
+    <nav class="bg-slate-50 text-black flex justify-between items-center p-4">
+        <img src="logo2.png" alt="logo" srcset="" class="h-20 bg-transparent">
+        <ul class="flex space-x-11 justify-end font-display text-black">
+            <li class="cursor-pointer nav-item"><a href="index.html">Home</a></li>
+            <li class="cursor-pointer nav-item"><a href="about.html">About</a></li>
+            <li class="cursor-pointer dropdown">Category
+                <div class="dropdown-content">
+                    <div class="dropdown-item">Breakfast
+                        <div class="sub-dropdown-content">
+                            <a href="#">Pancakes</a>
+                            <a href="#">Smoothies</a>
+                            <a href="#">Omelets</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-item">Meal
+                        <div class="sub-dropdown-content">
+                            <a href="#">Salads</a>
+                            <a href="#">Sandwiches</a>
+                            <a href="#">Pasta</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-item">Dinner
+                        <div class="sub-dropdown-content">
+                            <a href="#">Steaks</a>
+                            <a href="#">Seafood</a>
+                            <a href="#">Vegetarian</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="cursor-pointer nav-item"><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="profile.html" class="profile-button">
+            <span class="material-symbols-outlined">account_circle</span>
+        </a>
+    </nav>
+
+    <main>
+        <div class="flex-container">
+            <div class="text-content font-display space-y-7 text-dark">
+                <h1>Fresh & Healthy Meal Plan</h1>
+                <p style="color: #ff6347;">Delicious Meals Delivered to Your Door From 700/- per week</p>
+                <a href="#" class="cta-button">Order Now</a>
+            </div>
+            <div>
+                <img src="hero.png" alt="Hero Image" class="hero-img">
+            </div>
+        </div>
+
+        <div class="flex flex-row">
+            <div class="category_items">
+                <div class="item-content">
+                    <a href="#"><img class="sale_item" src="f1.png" alt="Offer 1"></a>
+                    <p class="sale-description">Golden, crispy, and juicy fried chicken, seasoned perfectly, offering a mouthwatering, savory, and finger-licking experience.</p>
+                </div>
+            </div>
+
+            <div class="category_items">
+                <div class="item-content">
+                    <a href="#"><img class="sale_item" src="f2.png" alt="Offer 1"></a>
+                    <p class="sale-description">Juicy chicken, zesty citrus, aromatic spices, deliciously flavorful and tender. 🍋🍗</p>
+                </div>
+            </div>
+
+            <div class="category_items">
+                <div class="item-content">
+                    <a href="#"><img class="sale_item" src="f4.png" alt="Offer 1"></a>
+                    <p class="sale-description">Juicy, savory, grilled, cheesy, flavorful, crispy, delicious, hearty, satisfying, mouthwatering</p>
+                </div>
+            </div>
+
+            <div class="category_items">
+                <div class="item-content">
+                    <a href="#"><img class="sale_item" src="f3.png" alt="Offer 1"></a>
+                    <p class="sale-description">Aromatic chicken, spiced rice, tender, flavorful, garnished, satisfying, complete meal.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <hr>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Our restaurant is a family-owned establishment that has been proudly serving the community since 2020. Located at the corner of Golf Field, Sec 62, Noida (201309).</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: platerestro@gmail.com</p>
+                <p>Phone: 1000 3670 86</p>
+                <p>Address: Golf Field, Sec 62, Noida, 201309</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#">FACEBOOK</a>
+                    <a href="#">INSTAGRAM</a>
+                    <a href="#">TWITTER</a>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 PLATE All Rights Reserved.</p>
+    </footer>
+
+    <div id="overlay" class="fixed inset-0 bg-gray-800 bg-opacity-50 z-40 hidden"></div>
+    <div id="auth-modal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+        <div id="auth-content" class="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full">
+            
+        </div>
+    </div>
+
+    <script>
+        function showLogin() {
+            document.getElementById('overlay').classList.remove('hidden');
+            document.getElementById('auth-modal').classList.remove('hidden');
+            fetch('login.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('auth-content').innerHTML = html;
+                });
+        }
+
+        function showSignup() {
+            document.getElementById('overlay').classList.remove('hidden');
+            document.getElementById('auth-modal').classList.remove('hidden');
+            fetch('signup.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('auth-content').innerHTML = html;
+                });
+        }
+
+        document.getElementById('overlay').addEventListener('click', function() {
+            document.getElementById('overlay').classList.add('hidden');
+            document.getElementById('auth-modal').classList.add('hidden');
+        });
+
+        // If you want to handle profile button click, add an event listener here
+        document.querySelector('.profile-button').addEventListener('click', function() {
+            window.location.href = 'profile.html'; // Navigate to profile.html
+        });
+    </script>
+</body>
+</html>
