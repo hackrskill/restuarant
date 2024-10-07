@@ -22,4 +22,7 @@ It also includes a modal for login and sign-up functionality.
 
 ## First-look of this website-->
 ![website_first-look](https://github.com/user-attachments/assets/f43d6a3d-3bf8-4d3d-9a80-6a54181ae1db)
+## Footer Section-->
+![footer section](https://github.com/user-attachments/assets/ebad4c5f-4190-4be0-9817-eabe742fe810)
+
 
